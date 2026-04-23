@@ -1,0 +1,8 @@
+TODO : Sunday:
+1. Property Owner Should be able to login and logout
+2. Property Owner Should be able to add properties and Units to those properties & Edit & Delete Properties
+3. Property owner shouls be able toa dd Tenants
+4. Property Onwers hould be able to assign Tenants to Units
+5. Tenant Should be able to see the unit assigned to them
+6. Property owner should be able to add Employees who are building fixers
+7. Building workers should be able to login and see what property they are assigned to
