@@ -59,4 +59,29 @@
       <module name="frontend-api-mgt" target="17" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin-mgt" options="" />
+      <module name="audit-mgt" options="" />
+      <module name="billing-mgt" options="" />
+      <module name="chat-mgt" options="" />
+      <module name="common" options="" />
+      <module name="file-mgt" options="" />
+      <module name="lease-mgt" options="" />
+      <module name="logger-adapter" options="" />
+      <module name="main-execution" options="" />
+      <module name="maintenance-mgt" options="" />
+      <module name="mq-adapter" options="" />
+      <module name="notification-mgt" options="" />
+      <module name="property-mgt" options="" />
+      <module name="reporting-mgt" options="" />
+      <module name="rest-adapter" options="" />
+      <module name="security-adapter" options="" />
+      <module name="session-manager" options="" />
+      <module name="sql-db-adapter" options="" />
+      <module name="swagger" options="" />
+      <module name="unit-test" options="" />
+      <module name="user-mgt" options="" />
+    </option>
+  </component>
 </project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <excludedPredefinedLibrary name="pms-project/New folder/pms-frontend/.next/dev/node_modules" />
+    <excludedPredefinedLibrary name="pms-project/New folder/pms-frontend/.next/node_modules" />
+    <excludedPredefinedLibrary name="pms-project/New folder/pms-frontend/node_modules" />
+    <excludedPredefinedLibrary name="pms-project/New folder/pms-web/node_modules" />
+    <excludedPredefinedLibrary name="pms-project/pms-frontend/node_modules" />
+  </component>
+</project>
