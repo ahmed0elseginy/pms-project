@@ -6,3 +6,6 @@ TODO : Sunday:
 5. Tenant Should be able to see the unit assigned to them
 6. Property owner should be able to add Employees who are building fixers
 7. Building workers should be able to login and see what property they are assigned to
+
+docker run -it --rm ghcr.io/anomalyco/opencode
+docker run -it --rm -v "${PWD}:/app" -w /app ghcr.io/anomalyco/opencode
