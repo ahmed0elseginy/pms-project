@@ -1,9 +1,24 @@
-ok now we need to complete the business logic i need to finish the Tenants logic
-1. take the data from frontend and write it in the swagger file to generate the apis and models
-2. write the entities in module and filters and the jpa and don't forget to use the abstract query builder and in service core logic u need to handle the use cases and some validation and for any builder model need use the MapStruct , no over engineering
-3.don't forget to write enum errors, domains, events,using  my style and liquibase files. and if some thing need thing like new states or something like that u can do it with clean way
-4.apis designs like me and don't forget to use any thing from common lib
-5. this style implementation own needs
+i need plan for free ai model to complete the Tenants and Leases (backend, frontend) and the frontend is a business idea for all thing BCz we don't have figma design
+and u must to apply my theme and implementation styl for backend and frontend like the other feature (user mgt, properties mgt ) and u read thing for example for my business styl
+1. take the data from frontend and write it in the swagger file to generate the apis and models the apis designs like me and don't forget to use any thing from common lib
+2. write the entities,jpa ,MapStruct for any model builder, filters in module and don't forget to use the abstract query builder,
+services core logic and u need to handle the use cases and some validation, enums(errors, domains, events, statuses),liquibase files, and if anything need something u can do it with clean way, patterns no over engineering
+3.when u finish the backend add some test data in db using the liquibase
+4.go for integration in frontend write the types and use the apis with the modules (dto,vto) and state mgt and error handing messages etc .. but the ui business stay it please
 
-6.when u finish the backend add some test data in db using the liquibase
-7.go for integration in frontend write the types and use the apis with the modules (dto,vto) and state mgt and error handing messages etc .. but the ui business stay it please
+
+Questions for You
+
+1. Tenant Creation Flow: When adding a new tenant, should we:
+        - Option B: Create tenant and user in one step (invite via email)
+
+     2. Lease Renewals: Should expired leases be renewable?
+
+     3. Security Deposit Handling: Track in lease table only separate financial transactions? (both)
+     4. Rent Payments: full billing module later?
+
+     5. Lease Documents: Need file upload for lease agreements? i think we can show best and modern solution for it
+
+
+
+
