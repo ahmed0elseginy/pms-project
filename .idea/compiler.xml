@@ -41,6 +41,8 @@
         <module name="billing-mgt" />
         <module name="admin-mgt" />
         <module name="reporting-mgt" />
+        <module name="community-mgt" />
+        <module name="staff-mgt" />
         <module name="security-adapter" />
         <module name="swagger" />
         <module name="session-manager" />
@@ -56,7 +58,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="community-liquibase" target="17" />
       <module name="frontend-api-mgt" target="17" />
+      <module name="staff-liquibase" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

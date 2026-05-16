@@ -1,0 +1,168 @@
+Act as a Senior Frontend Engineer + UI Architect.
+
+Create a COMPLETE production-ready frontend project for a Property Management System (USA market).
+
+Build the project from scratch using:
+
+Tech Stack:
+- Next.js (latest App Router)
+- TypeScript
+- Tailwind CSS
+- Headless UI
+- Redux Toolkit
+- React Hook Form
+- Zod
+- Axios
+- TanStack Table
+- Framer Motion
+- Recharts
+- Heroicons / Lucide React
+- ESLint + Prettier
+
+Goal:
+Generate a full modern enterprise SaaS frontend codebase, not just suggestions.
+
+System Name:
+Property Management System
+
+Target Users / Roles:
+1. Property Manager
+2. Superintendent
+3. Resident
+
+Main Modules:
+- Dashboard
+- Admin
+- Properties
+- Units
+- Residents / Tenants
+- Lease Management
+- Billing / Payments
+- Maintenance Requests
+- Chat / Messaging
+- Notifications
+- Reports / Analytics
+- Documents
+- Settings
+- Authentication
+
+Requirements:
+
+1. Create full Next.js project structure.
+
+2. Use App Router with route groups for roles:
+- /manager/*
+- /superintendent/*
+- /resident/*
+
+3. Build authentication flow:
+- Login
+- Register
+- Forgot password
+- Protected routes
+- Role based access
+
+4. Build reusable UI system:
+- Sidebar
+- Header
+- Breadcrumbs
+- Cards
+- Data Tables
+- Search bars
+- Filters
+- Modals
+- Drawers
+- Tabs
+- Forms
+- Status badges
+- Empty states
+- Skeleton loaders
+
+5. Build Redux Toolkit store with slices:
+- authSlice
+- userSlice
+- propertySlice
+- unitSlice
+- leaseSlice
+- billingSlice
+- maintenanceSlice
+- chatSlice
+- notificationSlice
+- uiSlice
+
+6. Build pages:
+
+Manager Portal:
+- Dashboard
+- All Properties
+- Property Details
+- Units Management
+- Tenant Management
+- Lease Tracking
+- Billing Center
+- Reports
+- Staff Management
+
+Superintendent Portal:
+- Dashboard
+- Assigned Buildings
+- Work Orders
+- Maintenance Calendar
+- Vendors
+- Building Inspections
+
+Resident Portal:
+- Dashboard
+- My Lease
+- Pay Rent
+- Maintenance Requests
+- Messages
+- Documents
+- Profile Settings
+
+7. Use realistic dummy data.
+
+8. Use premium modern design inspired by:
+- AppFolio
+- Buildium
+- Stripe Dashboard
+- Linear
+- Airbnb Admin
+
+9. Must be:
+- Responsive
+- Clean code
+- Reusable
+- Scalable
+- Enterprise level
+- Fast loading
+- Accessible
+
+10. Generate real code files.
+
+Output format:
+
+# Step 1: Full Project Folder Structure
+
+# Step 2: package.json
+
+# Step 3: Tailwind Setup
+
+# Step 4: Redux Store
+
+# Step 5: Shared Components
+
+# Step 6: Layouts
+
+# Step 7: Pages
+
+# Step 8: Example Full Screens
+
+# Step 9: Best Practices
+
+# Step 10: Run Instructions
+
+Important:
+Do NOT explain only.
+Generate actual project code with file names and contents.
+Create a real frontend project.

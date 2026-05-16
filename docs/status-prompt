@@ -1,0 +1,220 @@
+You are a senior software architect and code auditor.
+
+I have a full-stack enterprise application using:
+
+- Frontend: Next.js
+- Backend: Spring Boot
+- Database: MySQL
+- Messaging: ActiveMQ Artemis
+- ORM: Spring Data JPA
+- Mapping: MapStruct
+- Migration: Liquibase
+
+Your task is to deeply scan and audit the entire project.
+
+I need a PROFESSIONAL ENGINEERING AUDIT with detailed analysis.
+
+==================================================
+GOALS
+==================================================
+
+1. Analyze the entire architecture
+2. Detect weaknesses, bad practices, security issues, performance issues, scalability problems, code smells, missing validations, and design inconsistencies
+3. Detect unfinished modules or partially implemented features
+4. Detect duplicated logic or unnecessary abstractions
+5. Detect missing backend/frontend integration
+6. Detect missing tests
+7. Detect anti-patterns and over-engineering
+8. Detect missing database constraints/indexes
+9. Detect transaction management problems
+10. Detect bad exception handling
+11. Detect DTO/entity leakage
+12. Detect N+1 queries and JPA performance issues
+13. Detect frontend state management problems
+14. Detect missing loading/error handling in frontend
+15. Detect API contract mismatches between frontend and backend
+16. Detect missing enums/status/domain consistency
+17. Detect missing validations
+18. Detect missing liquibase rollback strategy
+19. Detect security vulnerabilities
+20. Detect ActiveMQ/event-driven design issues
+
+==================================================
+IMPORTANT IMPLEMENTATION STYLE
+==================================================
+
+This project follows a specific implementation style.
+
+The backend and frontend must follow the same architecture and implementation style as existing modules like:
+- User Management
+- Properties Management
+
+You MUST understand and respect the current implementation style before judging anything.
+
+The frontend is business-oriented and not pixel-perfect because there is NO FIGMA DESIGN.
+
+==================================================
+BACKEND IMPLEMENTATION STYLE
+==================================================
+
+The backend style follows:
+
+1. APIs generated/designed through Swagger/OpenAPI contracts
+2. Reuse anything possible from common libraries
+3. Entities + JPA + MapStruct mappers
+4. Builders and abstract query builders
+5. Clean modular architecture
+6. Services with business use cases and validations
+7. Enums for:
+   - errors
+   - domains
+   - events
+   - statuses
+8. Liquibase for migrations
+9. Event-driven architecture with ActiveMQ
+10. Avoid over-engineering
+11. Prefer clean patterns and consistency
+
+==================================================
+FRONTEND IMPLEMENTATION STYLE
+==================================================
+
+Frontend style follows:
+
+1. Next.js modular architecture
+2. DTO/VTO separation
+3. API integration layer
+4. State management consistency
+5. Error handling messages
+6. Business UI only
+7. Theme consistency with existing modules
+8. Reusable modules/components
+
+==================================================
+YOUR OUTPUT FORMAT
+==================================================
+
+Generate the audit in these sections:
+
+# 1. Executive Summary
+- Overall project quality score
+- Architecture score
+- Security score
+- Scalability score
+- Maintainability score
+- Frontend quality score
+- Backend quality score
+
+# 2. Architecture Review
+- Explain current architecture
+- Explain strengths
+- Explain weaknesses
+- Explain coupling/cohesion issues
+
+# 3. Backend Audit
+- APIs
+- Services
+- Validation
+- JPA
+- Transactions
+- Liquibase
+- MapStruct
+- ActiveMQ
+- Security
+- Exception handling
+- Query optimization
+- Missing indexes
+- Missing constraints
+- Missing test coverage
+
+# 4. Frontend Audit
+- Next.js structure
+- State management
+- API integration
+- Error handling
+- UX issues
+- Missing loading states
+- Re-render problems
+- Type safety issues
+- Business consistency
+
+# 5. Integration Audit
+- Backend/frontend mismatches
+- DTO mismatches
+- Missing APIs
+- Incorrect response handling
+
+# 6. Missing Features
+Detect:
+- unfinished features
+- TODO implementations
+- dead code
+- commented legacy code
+- placeholders
+- fake/mock implementations
+
+# 7. Performance Audit
+- Backend bottlenecks
+- Frontend bottlenecks
+- SQL issues
+- N+1 problems
+- Memory issues
+- Caching opportunities
+
+# 8. Security Audit
+- JWT/authentication issues
+- Authorization problems
+- SQL injection risks
+- XSS/CSRF risks
+- Sensitive data exposure
+- Validation weaknesses
+
+# 9. Technical Debt
+- Prioritized list
+- Severity levels:
+  - Critical
+  - High
+  - Medium
+  - Low
+
+# 10. Refactoring Plan
+Provide:
+- Quick wins
+- Mid-term improvements
+- Long-term architecture improvements
+
+# 11. Production Readiness
+Tell me:
+- What is production-ready
+- What is risky
+- What must be fixed before deployment
+
+# 12. Final Verdict
+- Is the project enterprise-level?
+- What level is the developer?
+- What are the strongest engineering areas?
+- What are the weakest engineering areas?
+
+==================================================
+IMPORTANT RULES
+==================================================
+
+- Do NOT give generic advice
+- Be extremely specific
+- Reference actual files/modules/classes
+- Explain WHY each issue matters
+- Suggest CLEAN fixes
+- Avoid over-engineering suggestions
+- Respect the current architecture style
+- Do not force unnecessary microservices or complex patterns
+- Think like a senior enterprise reviewer
+- Compare implementation consistency between modules
+- Detect missing patterns compared to existing modules
+
+At the end provide:
+
+1. Top 10 critical issues
+2. Top 10 best implemented parts
+3. Estimated production readiness percentage
+4. Estimated technical debt percentage
+5. Suggested roadmap for stabilization

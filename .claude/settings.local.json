@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse -Directory)",
+      "Bash(Select-Object -First 20)",
+      "Bash(Format-Table FullName)",
+      "Bash(xargs ls -la)",
+      "Bash(cd /c/Users/HazeX01/Documents/GitHub/ali-workspace/pms-project/pms-backend && find modules -maxdepth 1 -type d | tail -13)",
+      "Bash(xargs head -30)",
+      "Bash(git submodule *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\HazeX01\\\\Documents\\\\GitHub\\\\ali-workspace\\\\pms-project\" -Directory)",
+      "Bash(Select-Object Name)",
+      "Bash(xargs wc -l)",
+      "Bash(xargs grep -l \"assignedTo\\\\|assignee\")",
+      "Bash(mvn compile *)",
+      "Bash(npx next *)",
+      "Bash(npx tsc *)",
+      "Bash(mvn generate-sources *)"
+    ]
+  }
+}
