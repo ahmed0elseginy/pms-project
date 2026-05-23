@@ -1,0 +1,104 @@
+# Schema is managed by Liquibase (main/_liquibase), not by Hibernate at runtime.
+# db-migrate applies changelogs before the backend starts so tables (e.g. user) exist.
+services:
+  db-migrate:
+    image: maven:3.9.9-eclipse-temurin-17
+    container_name: pms-db-migrate
+    volumes:
+      - ./pms-backend:/workspace:ro
+      - db_migrate_m2:/root/.m2
+    working_dir: /workspace/main/_liquibase
+    command:
+      - mvn
+      - --batch-mode
+      - -Dcurrent.environment=docker
+      - -Pliquibase
+      - liquibase:update
+    depends_on:
+      mysql:
+        condition: service_healthy
+    restart: "no"
+
+  backend:
+    build:
+      context: ./pms-backend
+      dockerfile: Dockerfile
+    image: pms-backend-app:local
+    container_name: pms-backend-app
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      SPRING_DATASOURCE_HIKARI_JDBC_URL: jdbc:mysql://mysql:3306/pms_backend?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_HIKARI_USERNAME: pms_backend
+      SPRING_DATASOURCE_HIKARI_PASSWORD: pms_backend@123
+      SPRING_DATASOURCE_HIKARI_INITIALIZATION_FAIL_TIMEOUT: 60000
+      SPRING_DATASOURCE_HIKARI_CONNECTION_TIMEOUT: 30000
+      SPRING_ARTEMIS_BROKER_URL: tcp://artemis:61616
+      SPRING_ARTEMIS_USER: pms_backend
+      SPRING_ARTEMIS_PASSWORD: pms_backend@123
+      DOCUMENT_STORAGE_PATH: /app/uploads
+    ports:
+      - "8080:8080"
+    volumes:
+      - uploads_data:/app/uploads
+    depends_on:
+      mysql:
+        condition: service_healthy
+      artemis:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./pms-frontend
+      dockerfile: Dockerfile
+    image: pms-frontend-app:local
+    container_name: pms-frontend-app
+    environment:
+      BACKEND_URL: http://backend:8080
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8.0
+    container_name: pms-mysql
+    environment:
+      MYSQL_DATABASE: pms_backend
+      MYSQL_USER: pms_backend
+      MYSQL_PASSWORD: pms_backend@123
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$$MYSQL_USER -p$$MYSQL_PASSWORD --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 20s
+    restart: unless-stopped
+
+  artemis:
+    image: apache/activemq-artemis:2.38.0
+    container_name: pms-artemis
+    ports:
+      - "61626:61616"
+    environment:
+      ARTEMIS_USER: pms_backend
+      ARTEMIS_PASSWORD: pms_backend@123
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/localhost/61616'"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+  uploads_data:
+  db_migrate_m2:

@@ -19,7 +19,8 @@
       "Bash(xargs -I {} bash -c 'echo \"=== {} ===\" && wc -l {}')",
       "Skill(claude-mem:mem-search)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\HazeX01\\\\Documents\\\\GitHub\\\\ali-workspace\\\\pms-project\\\\pms-backend\\\\modules\\\\notification\\\\notification-mgt\\\\src\" -Recurse -Directory)",
-      "Bash(Select-Object -ExpandProperty FullName)"
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(./mvnw compile *)"
     ]
   }
 }
