@@ -37,7 +37,7 @@ services:
       SPRING_ARTEMIS_PASSWORD: pms_backend@123
       DOCUMENT_STORAGE_PATH: /app/uploads
     ports:
-      - "8080:8080"
+      - "9001:9001"
     volumes:
       - uploads_data:/app/uploads
     depends_on:
@@ -56,7 +56,7 @@ services:
     image: pms-frontend-app:local
     container_name: pms-frontend-app
     environment:
-      BACKEND_URL: http://backend:8080
+      BACKEND_URL: http://backend:9001
     ports:
       - "3000:3000"
     depends_on:

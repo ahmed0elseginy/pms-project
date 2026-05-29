@@ -1,10 +1,14 @@
-i need plan for free ai model to complete the Tenants and Leases (backend, frontend) and the frontend is a business idea for all thing BCz we don't have figma design
-and u must to apply my theme and implementation styl for backend and frontend like the other feature (user mgt, properties mgt ) and u read thing for example for my business styl
+i need plan for free ai model to complete the Tenants and Leases
+
+
+(backend, frontend) and the frontend is a business idea for all thing BCz we don't have figma design
+and u must to apply my theme and implementation styl for backend and frontend like the other feature (user mgt, properties mgt,etc.. ) and u read thing for example for my business styl
 1. take the data from frontend and write it in the swagger file to generate the apis and models the apis designs like me and don't forget to use any thing from common lib
 2. write the entities,jpa ,MapStruct for any model builder, filters in module and don't forget to use the abstract query builder,
 services core logic and u need to handle the use cases and some validation, enums(errors, domains, events, statuses),liquibase files, and if anything need something u can do it with clean way, patterns no over engineering
-3.when u finish the backend add some test data in db using the liquibase
-4.go for integration in frontend write the types and use the apis with the modules (dto,vto) and state mgt and error handing messages etc .. but the ui business stay it please
+3.publish messages with MQ adapter interface and if u need to use it in notification system do it with the same design code, if u need t add listener add it
+4.when u finish the backend add some test data in db using the liquibase
+5.go for integration in frontend if not integration with mock already write the types and use the apis with the modules (dto,vto) and state mgt and error handing messages etc .. but the ui business stay it please
 
 
 Questions for You

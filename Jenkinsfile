@@ -1,3 +1,6 @@
+def DEPLOY_DIR = '/opt/pms'
+def COMPOSE_FILE = "${DEPLOY_DIR}/docker-compose.yml"
+
 pipeline {
     agent any
 
@@ -69,8 +72,18 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh '${DOCKER_COMPOSE} down'
-                sh '${DOCKER_COMPOSE} up -d'
+                echo 'Copying compose file to deploy directory'
+                sh "mkdir -p ${DEPLOY_DIR}"
+                sh "cp \$(pwd)/docker-compose.yml ${COMPOSE_FILE}"
+
+                echo 'Stopping backend and frontend only (keeping mysql and artemis running)'
+                sh "${DOCKER_COMPOSE} -f ${COMPOSE_FILE} stop backend frontend || true"
+                sh "${DOCKER_COMPOSE} -f ${COMPOSE_FILE} rm -f backend frontend || true"
+
+                echo 'Starting db-migrate then backend and frontend'
+                sh "${DOCKER_COMPOSE} -f ${COMPOSE_FILE} up -d db-migrate"
+                sh "sleep 30"
+                sh "${DOCKER_COMPOSE} -f ${COMPOSE_FILE} up -d backend frontend"
             }
         }
     }
