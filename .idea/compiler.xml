@@ -34,26 +34,28 @@
         </processorPath>
         <module name="logger-adapter" />
         <module name="rest-adapter" />
-        <module name="unit-test" />
         <module name="audit-mgt" />
         <module name="notification-mgt" />
         <module name="property-mgt" />
-        <module name="billing-mgt" />
-        <module name="admin-mgt" />
+        <module name="vendor-mgt" />
         <module name="reporting-mgt" />
         <module name="community-mgt" />
-        <module name="staff-mgt" />
         <module name="security-adapter" />
         <module name="swagger" />
         <module name="session-manager" />
         <module name="main-execution" />
-        <module name="lease-mgt" />
         <module name="common" />
+        <module name="inspection-mgt" />
         <module name="user-mgt" />
         <module name="mq-adapter" />
-        <module name="chat-mgt" />
         <module name="sql-db-adapter" />
         <module name="file-mgt" />
+        <module name="unit-test" />
+        <module name="billing-mgt" />
+        <module name="admin-mgt" />
+        <module name="staff-mgt" />
+        <module name="lease-mgt" />
+        <module name="chat-mgt" />
         <module name="maintenance-mgt" />
       </profile>
     </annotationProcessing>
