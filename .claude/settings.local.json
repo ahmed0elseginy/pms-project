@@ -47,7 +47,10 @@
       "PowerShell(try { \\(Invoke-WebRequest -Uri \"http://localhost:3000/login\" -UseBasicParsing -TimeoutSec 5\\).StatusCode } catch { $_.Exception.Message })",
       "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000/activate?email=test@test.com\" -UseBasicParsing -TimeoutSec 5 -MaximumRedirection 0; $r.Headers.Location } catch { $_.Exception.Response.Headers.Location })",
       "PowerShell(Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | Select-Object OwningProcess | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -Confirm:$false }; Start-Sleep -Seconds 2; \"done\")",
-      "Bash(xargs grep -l \"maintenance\\\\|Maintenance\\\\|ticket\\\\|Ticket\")"
+      "Bash(xargs grep -l \"maintenance\\\\|Maintenance\\\\|ticket\\\\|Ticket\")",
+      "Bash(xargs grep -l -i \"inspection\")",
+      "Bash(grep -rn \"TODO\\\\|mock\\\\|hardcoded\\\\|\\\\[\\\\]\\\\s*//\\\\|dummyData\\\\|fakeData\\\\|mockData\" /c/Users/HazeX01/Documents/GitHub/ali-workspace/pms-project/pms-frontend/src/app --include=\"*.tsx\" -l)",
+      "Bash(xargs grep -l \"email\\\\|template\\\\|notification\")"
     ]
   }
 }
