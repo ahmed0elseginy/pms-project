@@ -1,3 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # PMS Project — Professional Engineering Audit
 
 **Date:** 2026-06-03 | **Auditor:** Senior Architect Review | **Stack:** Spring Boot 3.4.9 + Next.js 15 + MySQL + ActiveMQ Artemis

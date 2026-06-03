@@ -50,7 +50,10 @@
       "Bash(xargs grep -l \"maintenance\\\\|Maintenance\\\\|ticket\\\\|Ticket\")",
       "Bash(xargs grep -l -i \"inspection\")",
       "Bash(grep -rn \"TODO\\\\|mock\\\\|hardcoded\\\\|\\\\[\\\\]\\\\s*//\\\\|dummyData\\\\|fakeData\\\\|mockData\" /c/Users/HazeX01/Documents/GitHub/ali-workspace/pms-project/pms-frontend/src/app --include=\"*.tsx\" -l)",
-      "Bash(xargs grep -l \"email\\\\|template\\\\|notification\")"
+      "Bash(xargs grep -l \"email\\\\|template\\\\|notification\")",
+      "Bash(npm install *)",
+      "Bash(npx playwright *)",
+      "Bash(curl *)"
     ]
   }
 }
