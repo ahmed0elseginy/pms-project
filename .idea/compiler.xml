@@ -36,6 +36,7 @@
         <module name="rest-adapter" />
         <module name="audit-mgt" />
         <module name="notification-mgt" />
+        <module name="tenant-mgt" />
         <module name="property-mgt" />
         <module name="vendor-mgt" />
         <module name="reporting-mgt" />

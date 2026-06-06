@@ -84,7 +84,30 @@
       "PowerShell(try { \\(Invoke-WebRequest -Uri http://localhost:3000 -TimeoutSec 8 -UseBasicParsing\\).StatusCode } catch { \"frontend not responding: $\\($_.Exception.Message\\)\" })",
       "PowerShell($c = Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue; if \\($c\\) { $p = Get-Process -Id $c[0].OwningProcess -ErrorAction SilentlyContinue; \"port 3000 held by PID $\\($c[0].OwningProcess\\) \\($\\($p.ProcessName\\)\\)\" } else { \"nothing on 3000\" }; try { $r = Invoke-WebRequest -Uri http://localhost:3000/login -TimeoutSec 10 -UseBasicParsing; \"GET /login -> $\\($r.StatusCode\\)\" } catch { \"GET /login failed: $\\($_.Exception.Message\\)\" })",
       "PowerShell(npm run *)",
-      "PowerShell(npx playwright test specs/manager/staff specs/manager/leases specs/manager/inspections specs/manager/tickets specs/manager/tenants specs/manager/units --project=chromium --workers=2 --reporter=line 2>&1 | Select-Object -Last 30)"
+      "PowerShell(npx playwright test specs/manager/staff specs/manager/leases specs/manager/inspections specs/manager/tickets specs/manager/tenants specs/manager/units --project=chromium --workers=2 --reporter=line 2>&1 | Select-Object -Last 30)",
+      "Bash(grep -rhoaE \"\\(org/bouncycastle/[a-z]+/?[a-z]*|com/fasterxml/jackson/dataformat/[a-z]+|org/apache/oltu/[a-z0-9/]+\\)\" /tmp/dsx/com 2>/dev/null | sort -u | head -40)",
+      "Bash(rm -rf \"src/app/manager/assignments\" \"e2e/specs/manager/assignments.spec.ts\" \"e2e/pages/manager/assignments.page.ts\")",
+      "Read(//c/c/Users/HazeX01/Documents/GitHub/ali-workspace/pms-project/pms-frontend/src/app/**)",
+      "Bash(cd /c/Users/HazeX01/Documents/GitHub/ali-workspace/pms-project/pms-frontend && ls src/components/ui | tr '\\\\n' ' '; echo \"---Textarea?---\"; ls src/components/ui | grep -i text)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(cd /c/Users/HazeX01/Documents/GitHub/ali-workspace/pms-project/pms-backend && grep -rln \"docusign\" --include=*.properties --include=*.yml --include=*.yaml . 2>/dev/null | grep -v target | head; echo \"===\"; cat modules/lease/lease-mgt/src/main/java/com/pms/lease/docusign/config/DocuSignProperties.java)",
+      "Bash(echo \"===active profile===\"; grep -rn \"spring.profiles.active\" main/main-execution/src/main/resources/*.properties; echo \"===key file exists?===\"; ls -la /c/pms/docusign/ 2>/dev/null || echo \"NO /c/pms/docusign directory\")",
+      "Bash(sed -i '618,839d' modules/property/_swagger/service/swagger.yaml)",
+      "Bash(sed -n '612,622p' modules/property/_swagger/service/swagger.yaml)",
+      "Bash(sed -i '1430,1539d' modules/property/_swagger/service/swagger.yaml)",
+      "Bash(sed -n '1426,1434p' modules/property/_swagger/service/swagger.yaml)",
+      "Bash(echo \"TSC_EXIT=$?\")",
+      "Bash(xargs grep -n \"ACTIVE\\\\|enum\\\\|\\(\")",
+      "Bash(xargs grep -n \"enum\\\\|\\(\")",
+      "Bash(mvn -q -pl modules/reporting/reporting-mgt -am compile -DskipTests)",
+      "Read(//tmp/**)",
+      "Bash(Select-Object -First 40)",
+      "PowerShell(npx tsc --noEmit 2>&1 | Select-Object -First 40)",
+      "PowerShell(mvn *)",
+      "Bash(grep -nB1 -A3 \"_createTicket\" pms-backend/modules/maintenance/maintenance-mgt/src/main/java/com/pms/maintenance/controller/implementation/TicketsControllerImpl.java)",
+      "Bash(sed -n '127,160p' pms-frontend/src/lib/api/endpoints.ts)",
+      "Bash(sed -n '30,55p' pms-frontend/src/store/slices/maintenanceSlice.ts)",
+      "Bash(xargs grep -nE \"ROLE|USER_ID|USER_FULL_NAME|enum\")"
     ]
   }
 }
