@@ -36,7 +36,6 @@
         <module name="rest-adapter" />
         <module name="audit-mgt" />
         <module name="notification-mgt" />
-        <module name="tenant-mgt" />
         <module name="property-mgt" />
         <module name="vendor-mgt" />
         <module name="reporting-mgt" />
@@ -64,6 +63,7 @@
       <module name="community-liquibase" target="17" />
       <module name="frontend-api-mgt" target="17" />
       <module name="staff-liquibase" target="17" />
+      <module name="tenant-mgt" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

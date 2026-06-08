@@ -67,6 +67,8 @@ services:
   mysql:
     image: mysql:8.0
     container_name: pms-mysql
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_DATABASE: pms_backend
       MYSQL_USER: pms_backend
