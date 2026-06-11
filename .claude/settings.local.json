@@ -133,7 +133,14 @@
       "Bash(docker exec mysql *)",
       "Bash(xargs grep -l \"Liquibase\\\\|liquibase\")",
       "Bash(xargs grep -l \"SpringLiquibase\\\\|@Bean.*Liquibase\\\\|new Liquibase\\\\|LiquibaseProperties\")",
-      "Bash(xargs grep -l \"liquibase\")"
+      "Bash(xargs grep -l \"liquibase\")",
+      "PowerShell(Get-ChildItem pms-frontend\\\\src\\\\lib -Recurse | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\\(Get-Location\\).Path + '\\\\pms-frontend\\\\src\\\\lib\\\\',''\\) })",
+      "PowerShell(\\(Get-Content pms-frontend\\\\src\\\\lib\\\\api\\\\endpoints.ts | Measure-Object -Line\\).Lines)",
+      "Bash(findstr /n \".\")",
+      "Bash(findstr /r \"^[0-9]*:.*populateAttachment\\\\|^[0-9]*:.*Caused\\\\|^[0-9]*:.*Stubbing\\\\|^[0-9]*:.*PotentialStubbing\\\\|^[0-9]*:.*Unnecessary\\\\|^[0-9]*:.*setParameter\")",
+      "PowerShell($f = \"C:\\\\Users\\\\HazeX01\\\\Documents\\\\GitHub\\\\ali-workspace\\\\pms-project\\\\pms-backend\\\\modules\\\\notification\\\\notification-mgt\\\\src\\\\test\\\\java\\\\com\\\\pms\\\\notification\\\\mq\\\\service\\\\BillingMgtListenerServiceImplTest.java\"; $c = [System.IO.File]::ReadAllText\\($f\\); $c = $c.Replace\\('containsEntry\\(\"INVOICE_TOTAL\", 3000.0\\)', 'containsEntry\\(\"INVOICE_TOTAL\", BigDecimal.valueOf\\(3000.0\\)\\)'\\); [System.IO.File]::WriteAllText\\($f, $c, [System.Text.Encoding]::UTF8\\))",
+      "PowerShell($f = \"C:\\\\Users\\\\HazeX01\\\\Documents\\\\GitHub\\\\ali-workspace\\\\pms-project\\\\pms-backend\\\\modules\\\\notification\\\\notification-mgt\\\\src\\\\test\\\\java\\\\com\\\\pms\\\\notification\\\\repository\\\\query\\\\EventParameterQueryBuilderTest.java\"; $utf8NoBom = New-Object System.Text.UTF8Encoding\\($false\\); $c = [System.IO.File]::ReadAllText\\($f\\); $old = \"void shouldSetParametersWhenEventIdIsSet\\(\\) {`r`n        EventParameterSearchFilter filter = EventParameterSearchFilter.builder\\(\\).eventId\\(1\\).build\\(\\);`r`n        builder.setParameters\\(typedQuery, filter\\);`r`n        verifyNoInteractions\\(typedQuery\\);`r`n    }\"; $new = \"void shouldSetParametersWhenEventIdIsSet\\(\\) {`r`n        EventParameterSearchFilter filter = EventParameterSearchFilter.builder\\(\\).eventId\\(1\\).build\\(\\);`r`n        builder.setParameters\\(typedQuery, filter\\);`r`n        verify\\(typedQuery\\).setParameter\\(`\"eventId`\", 1\\);`r`n    }\"; $c = $c.Replace\\($old, $new\\); [System.IO.File]::WriteAllText\\($f, $c, $utf8NoBom\\))",
+      "PowerShell($f = \"C:\\\\Users\\\\HazeX01\\\\Documents\\\\GitHub\\\\ali-workspace\\\\pms-project\\\\pms-backend\\\\modules\\\\notification\\\\notification-mgt\\\\src\\\\test\\\\java\\\\com\\\\pms\\\\notification\\\\repository\\\\query\\\\EventParameterQueryBuilderTest.java\"; $bytes = [System.IO.File]::ReadAllBytes\\($f\\); $hasR = $false; for\\($i=0; $i -lt [Math]::Min\\(500, $bytes.Length\\); $i++\\) { if\\($bytes[$i] -eq 13\\) { $hasR = $true; break } }; Write-Output \"Has CR \\(CRLF\\): $hasR\")"
     ]
   }
 }
