@@ -187,6 +187,12 @@ Three-layer repository:
 
 **Query Builder:** extends `AbstractQueryBuilder`, override `evaluateWhereConditions`, `setParameters`, `joinQuery`, `getSortingMap`, `getDefaultSorting`
 
+**No queries in JPA repositories (mandatory, no exceptions):**
+- `{Entity}JpaRepository` interfaces only extend `JpaRepository<Entity, Id>`. They declare **no methods**: no `@Query` (JPQL or native) and no derived query methods (`findBySlug`, `existsByCode`, `countByStatus`, `deleteBy…`, …).
+- Every lookup other than the inherited `findById` / `save` / `saveAll` / `delete` / `deleteById` goes through the entity's `{Entity}QueryBuilder extends AbstractQueryBuilder` with a `{Entity}SearchFilter`, called from `{Entity}RepositoryImpl` (e.g. `selectBySlug` = filter with `slug` + `selectAllByFilters`, first result).
+- If `AbstractQueryBuilder` lacks something (single result, exists, lock mode for `SELECT … FOR UPDATE`, aggregates such as SUM), add it to `AbstractQueryBuilder` in `library/sql-db-adapter` so every builder can use it. Never fall back to `@Query`.
+- Data owned by another module (e.g. a workspace's currency read from property-mgt) is read through that module's proxy service, never by SQL against its tables.
+
 ### Service Patterns
 
 - Constructor injection via `@AllArgsConstructor` (no `@Autowired` field injection)
@@ -454,6 +460,7 @@ const itemVariants = {
 ### DON'T
 - Do NOT edit generated code in `controller/generated/` or `model/generated/` (backend)
 - Do NOT use `@Autowired` field injection - use constructor injection (backend)
+- Do NOT write `@Query` or derived query methods (`findBy…`, `existsBy…`, `countBy…`) in JPA repositories - use the `AbstractQueryBuilder` query builder (backend)
 - Do NOT use TypeScript enums - use string literal union types (frontend)
 - Do NOT use relative parent imports (`../../`) - use `@/` alias (frontend)
 - Do NOT use CSS modules - use Tailwind utility classes (frontend)
