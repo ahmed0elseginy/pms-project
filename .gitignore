@@ -1,5 +1,8 @@
 /uploads
 node_modules
+!.env.example
+config.bat
+# Secrets (restored after the malware removed them)
 .env
 .env.*
 !.env.example
