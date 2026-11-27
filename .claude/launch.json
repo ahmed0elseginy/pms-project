@@ -1,0 +1,183 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pms-backend-phase0",
+      "runtimeExecutable": "java",
+      "runtimeArgs": [
+        "-jar",
+        "C:/Users/HazeX/Documents/GitHub/ali-workspace/pms-project/pms-backend/main/deployments/pms_ver_0.0.1/pms-mgt.jar",
+        "--server.port=9001",
+        "--spring.datasource.hikari.jdbc-url=jdbc:mysql://localhost:3307/pms_backend?useSSL=false&allowPublicKeyRetrieval=true",
+        "--spring.artemis.broker-url=tcp://localhost:61617",
+        "--pms.docusign.enabled=false"
+      ],
+      "port": 9001
+    },
+    {
+      "name": "pms-frontend-phase0",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "C:/Users/HazeX/Documents/GitHub/ali-workspace/pms-project/.claude/worktrees/peaceful-fermi-b10e3b/pms-frontend",
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "3000"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "pms-frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "C:/Users/HazeX/Documents/GitHub/ali-workspace/pms-project/pms-frontend",
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "3001"
+      ],
+      "port": 3001
+    },
+    {
+      "name": "pms-frontend-prod",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "C:/Users/HazeX/Documents/GitHub/ali-workspace/pms-project/pms-frontend",
+        "run",
+        "start",
+        "--",
+        "-p",
+        "3001"
+      ],
+      "env": {
+        "NEXT_DIST_DIR": ".next-prod"
+      },
+      "port": 3001
+    },
+    {
+      "name": "pms-backend",
+      "runtimeExecutable": "java",
+      "runtimeArgs": [
+        "-jar",
+        "C:/Users/HazeX/Documents/GitHub/ali-workspace/pms-project/.claude/worktrees/be-main/main/deployments/pms_ver_0.0.1/pms-mgt.jar",
+        "--server.port=9001",
+        "--spring.datasource.hikari.jdbc-url=jdbc:mysql://localhost:3307/pms_backend?useSSL=false&allowPublicKeyRetrieval=true",
+        "--spring.artemis.broker-url=tcp://localhost:61617",
+        "--pms.docusign.enabled=false",
+        "--spring.mail.host=127.0.0.1",
+        "--spring.mail.port=2599",
+        "--com.pms.library.rest.cors-allowed-origins=http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001,http://127.0.0.1:3001,http://localhost:5173,http://127.0.0.1:5173,https://f5e6-41-46-236-215.ngrok-free.app,http://187.77.198.65:3000,http://manager.localhost:3001,http://staff.localhost:3001,http://resident.localhost:3001"
+      ],
+      "port": 9001
+    },
+    {
+      "name": "pms-frontend-main-check",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "C:/Users/HazeX/AppData/Local/Temp/claude/C--Users-HazeX--claude-spares-spare-1Tbukq/98afc7d9-5415-4310-ad63-c815c529014f/scratchpad/fe-main",
+        "run",
+        "start",
+        "--",
+        "-p",
+        "3001"
+      ],
+      "env": {
+        "NEXT_DIST_DIR": ".next-prod"
+      },
+      "port": 3001
+    },
+    {
+      "name": "pms-backend-l10n",
+      "runtimeExecutable": "java",
+      "runtimeArgs": [
+        "-jar",
+        "C:/Users/HazeX/AppData/Local/Temp/claude/C--Users-HazeX-Documents-GitHub-ali-workspace-pms-project/8752dc60-6063-437e-8d30-f89ed713efee/scratchpad/pms-mgt-l10n.jar",
+        "--server.port=9003",
+        "--spring.datasource.hikari.jdbc-url=jdbc:mysql://localhost:3307/pms_backend?useSSL=false&allowPublicKeyRetrieval=true",
+        "--spring.artemis.broker-url=tcp://localhost:61617",
+        "--pms.docusign.enabled=false",
+        "--spring.mail.host=127.0.0.1",
+        "--spring.mail.port=2599",
+        "--com.pms.library.rest.cors-allowed-origins=http://localhost:3004,http://127.0.0.1:3004"
+      ],
+      "port": 9003,
+      "autoPort": false
+    },
+    {
+      "name": "pms-frontend-l10n",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "C:/Users/HazeX/Documents/GitHub/ali-workspace/pms-project/pms-frontend",
+        "run",
+        "start",
+        "--",
+        "-p",
+        "3004"
+      ],
+      "env": {
+        "NEXT_DIST_DIR": ".next-l10n",
+        "BACKEND_URL": "http://localhost:9003"
+      },
+      "port": 3004,
+      "autoPort": false
+    },
+    {
+      "name": "pms-backend-unitapi",
+      "runtimeExecutable": "java",
+      "runtimeArgs": [
+        "-jar",
+        "C:/Users/HazeX/AppData/Local/Temp/claude/C--Users-HazeX-Documents-GitHub-ali-workspace-pms-project/0f5d7dab-9939-4871-b945-761cc94bd5a1/scratchpad/pms-mgt-unitapi.jar",
+        "--server.port=9012",
+        "--spring.datasource.hikari.jdbc-url=jdbc:mysql://localhost:3307/pms_backend?useSSL=false&allowPublicKeyRetrieval=true",
+        "--spring.artemis.broker-url=tcp://localhost:61617",
+        "--pms.docusign.enabled=false",
+        "--spring.mail.host=127.0.0.1",
+        "--spring.mail.port=2599",
+        "--com.pms.library.rest.cors-allowed-origins=http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001,http://127.0.0.1:3001,http://localhost:5173,http://127.0.0.1:5173,https://f5e6-41-46-236-215.ngrok-free.app,http://187.77.198.65:3000,http://manager.localhost:3001,http://staff.localhost:3001,http://resident.localhost:3001"
+      ],
+      "port": 9012,
+      "autoPort": false
+    },
+    {
+      "name": "pms-frontend-v1pages",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "C:/Users/HazeX/Documents/GitHub/ali-workspace/pms-project/.claude/worktrees/fe-v1pages",
+        "run",
+        "start",
+        "--",
+        "-p",
+        "3001"
+      ],
+      "env": {
+        "NEXT_DIST_DIR": ".next-prod"
+      },
+      "port": 3001
+    },
+    {
+      "name": "pms-backend-tenancy",
+      "runtimeExecutable": "java",
+      "runtimeArgs": [
+        "-jar",
+        "C:/Users/HazeX/AppData/Local/Temp/claude/C--Users-HazeX-Documents-GitHub-ali-workspace-pms-project/1de0e2b2-513f-4751-8056-36d2df9df01f/scratchpad/pms-mgt-tenancy.jar",
+        "--server.port=9011",
+        "--spring.datasource.hikari.jdbc-url=jdbc:mysql://localhost:3307/pms_backend?useSSL=false&allowPublicKeyRetrieval=true",
+        "--spring.artemis.broker-url=tcp://localhost:61617",
+        "--pms.docusign.enabled=false",
+        "--spring.mail.host=127.0.0.1",
+        "--spring.mail.port=2599",
+        "--com.pms.library.rest.cors-allowed-origins=http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001,http://127.0.0.1:3001,http://localhost:5173,http://127.0.0.1:5173,https://f5e6-41-46-236-215.ngrok-free.app,http://187.77.198.65:3000,http://manager.localhost:3001,http://staff.localhost:3001,http://resident.localhost:3001"
+      ],
+      "port": 9011,
+      "autoPort": false
+    }
+  ]
+}
